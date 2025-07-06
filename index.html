@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CuruTracker - Currency Converter</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <i class="fas fa-exchange-alt"></i>
+                <h1>CuruTracker</h1>
+            </div>
+            <p class="subtitle">Real-time Currency Converter</p>
+        </header>
+
+        <main class="main-content">
+            <div class="converter-card">
+                <div class="input-group">
+                    <div class="input-field">
+                        <label for="amount">Amount</label>
+                        <input type="number" id="amount" placeholder="Enter amount" value="100" min="0" step="0.01">
+                    </div>
+                    
+                    <div class="currency-selector">
+                        <div class="select-field">
+                            <label for="fromCurrency">From</label>
+                            <select id="fromCurrency">
+                                <option value="USD">USD - US Dollar</option>
+                                <option value="EUR">EUR - Euro</option>
+                                <option value="GBP">GBP - British Pound</option>
+                                <option value="JPY">JPY - Japanese Yen</option>
+                                <option value="CAD">CAD - Canadian Dollar</option>
+                                <option value="AUD">AUD - Australian Dollar</option>
+                                <option value="CHF">CHF - Swiss Franc</option>
+                                <option value="CNY">CNY - Chinese Yuan</option>
+                                <option value="INR">INR - Indian Rupee</option>
+                                <option value="BRL">BRL - Brazilian Real</option>
+                            </select>
+                        </div>
+                        
+                        <button class="swap-btn" id="swapBtn">
+                            <i class="fas fa-exchange-alt"></i>
+                        </button>
+                        
+                        <div class="select-field">
+                            <label for="toCurrency">To</label>
+                            <select id="toCurrency">
+                                <option value="EUR">EUR - Euro</option>
+                                <option value="USD">USD - US Dollar</option>
+                                <option value="GBP">GBP - British Pound</option>
+                                <option value="JPY">JPY - Japanese Yen</option>
+                                <option value="CAD">CAD - Canadian Dollar</option>
+                                <option value="AUD">AUD - Australian Dollar</option>
+                                <option value="CHF">CHF - Swiss Franc</option>
+                                <option value="CNY">CNY - Chinese Yuan</option>
+                                <option value="INR">INR - Indian Rupee</option>
+                                <option value="BRL">BRL - Brazilian Real</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="convert-btn" id="convertBtn">
+                    <i class="fas fa-calculator"></i>
+                    Convert
+                </button>
+
+                <div class="result-section" id="resultSection" style="display: none;">
+                    <div class="result-card">
+                        <div class="result-header">
+                            <h3>Conversion Result</h3>
+                            <span class="rate-info" id="rateInfo"></span>
+                        </div>
+                        <div class="result-content">
+                            <div class="amount-display">
+                                <span class="original-amount" id="originalAmount"></span>
+                                <span class="arrow">→</span>
+                                <span class="converted-amount" id="convertedAmount"></span>
+                            </div>
+                            <div class="exchange-rate" id="exchangeRate"></div>
+                        </div>
+                        <div class="result-footer">
+                            <span class="date-info" id="dateInfo"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="error-section" id="errorSection" style="display: none;">
+                    <div class="error-card">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <p id="errorMessage"></p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>Powered by Fixer.io API • Real-time exchange rates</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
